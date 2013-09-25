@@ -9,7 +9,7 @@ object ApplicationBuild extends Build {
     scalaVersion := "2.10.2"
 
     val appDependencies = Seq(
-      "com.micronautics" %% "securesocial" % "2.2.0-SNAPSHOT" withSources
+      "com.micronautics" % "securesocial" % "2.2.0" withSources
     )
 
     val main = play.Project(appName, appVersion, appDependencies).settings(
