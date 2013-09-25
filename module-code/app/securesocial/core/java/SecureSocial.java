@@ -16,14 +16,15 @@
  */
 package securesocial.core.java;
 
-import org.codehaus.jackson.node.ObjectNode;
+import com.fasterxml.jackson.databind.node.ObjectNode;
 import play.Logger;
 import play.api.libs.oauth.ServiceInfo;
+import play.libs.F;
 import play.libs.Json;
 import play.libs.Scala;
 import play.mvc.Action;
 import play.mvc.Http;
-import play.mvc.Result;
+import play.mvc.SimpleResult;
 import play.mvc.With;
 import scala.Option;
 import scala.util.Either;
@@ -194,7 +195,7 @@ public class SecureSocial {
     public static class Secured extends Action<SecuredAction> {
 
         @Override
-        public Result call(Http.Context ctx) throws Throwable {
+        public F.Promise<SimpleResult> call(Http.Context ctx) throws Throwable {
             try {
                 fixHttpContext(ctx);
                 final Authenticator authenticator = getAuthenticatorFromRequest(ctx);
@@ -204,7 +205,7 @@ public class SecureSocial {
                         Logger.debug("[securesocial] anonymous user trying to access : " + ctx.request().uri());
                     }
                     if ( configuration.ajaxCall() ) {
-                        return unauthorized(ajaxCallNotAuthenticated());
+                        return F.Promise.pure(unauthorized(ajaxCallNotAuthenticated()));
                     } else {
                         ctx.flash().put("error", play.i18n.Messages.get("securesocial.loginRequired"));
                         ctx.session().put(ORIGINAL_URL, ctx.request().uri());

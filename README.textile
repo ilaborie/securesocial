@@ -1,12 +1,21 @@
+This fork of securesocial has been archived in case others need it. Because GitHub only supports one fork of a project, and I just forked the current version of securesocial for Play 2.1.1, I have renamed this project, and it no longer appears as a fork.
+
+I added a 2.2.0 branch. This version updates the dependencies to use Play 2.2.0.
+
+This branch does not compile.
+<strike>The demo Scala app runs without problems.</strike>
+
+I published this to the Typesafe community repository. You can include it in your Play Build.scala file like this (note I changed the organization from securesocial to com.micronautics so my fork does not step on Jorge's work):
+
+<pre>
+"com.micronautics" %  "securesocial" % "2.2.0" withSources()
+
+resolvers += Resolver.url("play-plugin-releases", new URL("http://repo.scala-sbt.org/scalasbt/sbt-plugin-releases/"))(Resolver.ivyStylePatterns)
+</pre>
+
 h1. SecureSocial for Play 2 
 
 SecureSocial allows you to add an authentication UI to your app that works with services based on OAuth1, OAuth2 and OpenID protocols.  SecureSocial provides Scala and Java APIs so you can integrate it using your preferred language.
-
-This fork of secure social can be included into your Play project like this:
-
-<pre>"com.micronautics" %% "securesocial" % "2.1.1-SNAPSHOT" withSources()</pre>
-...with this resolver (textile messes this up; look at the original file, not the rendered HTML for the actual instruction):
-<pre>Resolver.url("play-plugin-snapshots", new URL("http://repo.scala-sbt.org/scalasbt/sbt-plugin-snapshots/"))(Resolver.ivyStylePatterns)</pre>
 
 Check the project web site for more information: <a href="http://www.securesocial.ws">http://www.securesocial.ws</a>
 
