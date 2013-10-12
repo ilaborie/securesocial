@@ -8,7 +8,7 @@ This branch does not compile.
 I published this to the Typesafe community repository. You can include it in your Play Build.scala file like this (note I changed the organization from securesocial to com.micronautics so my fork does not step on Jorge's work):
 
 <pre>
-"com.micronautics" %  "securesocial" % "2.2.0" withSources()
+"com.micronautics" % "securesocial" % "2.2.0" withSources
 
 resolvers += Resolver.url("play-plugin-releases", new URL("http://repo.scala-sbt.org/scalasbt/sbt-plugin-releases/"))(Resolver.ivyStylePatterns)
 </pre>
