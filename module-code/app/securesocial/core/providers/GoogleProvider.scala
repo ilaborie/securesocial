@@ -30,7 +30,7 @@ class GoogleProvider(application: Application) extends OAuth2Provider(applicatio
   val Error = "error"
   val Message = "message"
   val Type = "type"
-  val Id = "authId"
+  val Id = "id"
   val Name = "name"
   val GivenName = "given_name"
   val FamilyName = "family_name"
