@@ -137,7 +137,9 @@ abstract class IdentityProvider(application: Application) extends Plugin with Re
   }
 
   protected def awaitResult(future: Future[Response]) = {
-    Await.result(future, IdentityProvider.secondsToWait)
+    val res = Await.result(future, IdentityProvider.secondsToWait)
+    Logger.warn(s"Response:\n${res.body}")
+    res
   }
 }
 
