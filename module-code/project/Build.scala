@@ -18,7 +18,7 @@ object ApplicationBuild extends Build {
   )
 
   val main = play.Project(appName, appVersion, appDependencies).settings(
-    organization  := "com.micronautics", // Don't want this fork to step on securesocial
+    organization  := "org.ilaborie", // Don't want this fork to step on securesocial
     crossPaths    := false,
     publishMavenStyle := false,
     resolvers ++= Seq(
