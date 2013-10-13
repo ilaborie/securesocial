@@ -29,7 +29,7 @@ class FacebookProvider(application: Application) extends OAuth2Provider(applicat
   val Error = "error"
   val Message = "message"
   val Type = "type"
-  val Id = "authId"
+  val Id = "id"
   val FirstName = "first_name"
   val LastName = "last_name"
   val Name = "name"
